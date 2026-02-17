@@ -29,3 +29,25 @@ def get_resume_feedback(resume_text: str):
 
     except Exception as e:
         return f"Error: {str(e)}"
+    
+def get_skill_gap_analysis(resume_text: str, job_description: str):
+    try:
+        response = client.chat.completions.create(
+            messages=[
+                {
+                    "role": "system",
+                    "content": "You are a career coach. Analyze the resume against the job description and identify skill gaps."
+                },
+                {
+                    "role": "user",
+                    "content": f"Analyze this resume:\n{resume_text}\n\nAgainst this job description:\n{job_description}\n\nIdentify skill gaps and suggest how to address them."
+                }
+            ],
+            max_tokens=500,
+            temperature=0.5
+        )
+
+        return response.choices[0].message.content
+
+    except Exception as e:
+        return f"Error: {str(e)}"
