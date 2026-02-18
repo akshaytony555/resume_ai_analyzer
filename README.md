@@ -18,7 +18,7 @@ An AI-powered FastAPI application that analyzes resumes and compares them with j
 ## Installation
 
 ```bash
-git clone <your-repo-url>
+git clone https://github.com/akshaytony555/resume_ai_analyzer.git
 cd resume_ai_analyser
 python -m venv venv
 venv\Scripts\activate
